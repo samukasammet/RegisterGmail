@@ -15,10 +15,10 @@ public class RegisterTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		System.setProperty("webdriver.chrome.driver", "C:/Users/Sammy/workspace/RegisterGmail");
+		System.setProperty("webdriver.chrome.driver", "C:/Users/Sammy/workspace/RegisterGmail/chromedriver.exe");
 		driver= new ChromeDriver();
 		driver.get("https://accounts.google.com/SignUp?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail&hl=pt-BR");
-	
+		registerPage = new RegisterPage(driver);	
 	}
 
 	@AfterClass
@@ -26,7 +26,8 @@ public class RegisterTest {
 	}
 
 	@Test
-	public void test() {
+	public void test() throws Exception {
+		registerPage.FillFilds();
 		
 	}
 
